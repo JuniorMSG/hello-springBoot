@@ -1,0 +1,21 @@
+###
+POST {{local-api}}/api/v1/post-api/example
+
+###
+POST {{local-api}}/api/v1/post-api/member
+Authorization: {{access-token}}
+Content-Type: application/json
+
+{"name": "John Doe" }
+
+
+###
+POST {{local-api}}/api/v1/post-api/member1
+Authorization: {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "aaa.@naver.com",
+  "organization" : "!@#$$$"
+}

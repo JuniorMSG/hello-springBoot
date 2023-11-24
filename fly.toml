@@ -1,0 +1,14 @@
+# fly.toml 파일 예시
+
+app = "hello-spring-sample"
+kill_signal = "SIGINT"
+kill_timeout = 5
+
+[services.concurrency]
+hard_limit = 25
+soft_limit = 20
+
+[[services.ports]]
+handlers = ["http"]
+port = 8080
+

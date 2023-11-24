@@ -1,0 +1,32 @@
+###
+PUT {{local-api}}/api/v1/put-api/member
+Authorization: {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "aaa.@naver.com",
+  "organization" : "!@#$$$"
+}
+
+###
+PUT {{local-api}}/api/v1/put-api/member1
+Authorization: {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "aaa.@naver.com",
+  "organization" : "!@#$$$"
+}
+
+###
+PUT {{local-api}}/api/v1/put-api/member2
+Authorization: {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "aaa.@naver.com",
+  "organization" : "!@#$$$"
+}
