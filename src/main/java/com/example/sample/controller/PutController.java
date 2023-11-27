@@ -1,6 +1,8 @@
 package com.example.sample.controller;
 
 import com.example.sample.dto.MemberDtoGeneral;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -45,6 +47,16 @@ public class PutController {
         return memberDtoGeneral;
     }
 
+
+    /**
+     * @PutMapping 구현
+     * ResponseEntity<MemberDtoGeneral>
+     **/
+    @PutMapping(value = "/member3")
+    public ResponseEntity<MemberDtoGeneral> putMemberDto3(@RequestBody MemberDtoGeneral memberDtoGeneral) {
+        return ResponseEntity.status(HttpStatus.ACCEPTED)
+                .body(memberDtoGeneral);
+    }
 
 
 }

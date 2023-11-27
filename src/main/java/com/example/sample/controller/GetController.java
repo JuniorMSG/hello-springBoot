@@ -1,15 +1,19 @@
 package com.example.sample.controller;
 
 import com.example.sample.dto.MemberDtoGeneral;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/api/v1/get-api")
 public class GetController {
 
+    private final Logger logger = Logger.getLogger(this.getClass().getSimpleName());
     // RequestMapping으로 구현
+
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String getHello() {
         // Sample URL http://localhost:8080/api/v1/get-api/hello
@@ -46,14 +50,33 @@ public class GetController {
     /*
      * @RequestParam 활용한 구현 - 1
      * http://localhost:8080/api/v1/get-api/request1?name=value&email=avalue&organization=value3
+     * http://localhost:8080/api/v1/get-api/request1?name=1234&email=1234&organization=asfasfs
      */
     @GetMapping(value = "/request1")
     public String getRequestParam1(
             @RequestParam String name,
             @RequestParam String email,
             @RequestParam String organization) {
+        logger.info("getRequestParam1 : 메서드가 호출 되었습니다.");
         return name + " " + email + " " + organization;
     }
+
+    /*
+     * @RequestParam 활용한 구현 - 1
+     * http://localhost:8080/api/v1/get-api/request1?name=value&email=avalue&organization=value3
+     * http://localhost:8080/api/v1/get-api/request1_swagger?name=1234&email=1234&organization=asfasfs
+     *
+     */
+    @GetMapping(value = "/request1_swagger")
+    public String getRequestParam1_swagger(
+            @Parameter(description = "이름", required = true) @RequestParam String name,
+            @Parameter(description = "이메일", required = true) @RequestParam String email,
+            @Parameter(description = "회사", required = true) @RequestParam String organization) {
+
+        logger.info("getRequestParam1_swagger : 메서드가 호출 되었습니다.");
+        return name + " " + email + " " + organization;
+    }
+
 
 
     /*

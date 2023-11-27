@@ -30,3 +30,15 @@ Content-Type: application/json
   "email": "aaa.@naver.com",
   "organization" : "!@#$$$"
 }
+
+
+###
+PUT {{local-api}}/api/v1/put-api/member3
+Authorization: {{access-token}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "aaa.@naver.com",
+  "organization" : "!@#$$$"
+}

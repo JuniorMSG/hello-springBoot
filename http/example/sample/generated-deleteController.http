@@ -1,0 +1,8 @@
+###
+DELETE {{local-api}}/api/v1/delete-api/55
+
+###
+DELETE {{local-api}}/api/v1/delete-api/member_request?email=1234
+
+
+
